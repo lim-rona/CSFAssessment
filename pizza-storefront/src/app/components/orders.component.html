@@ -1,0 +1,18 @@
+<h1>Orders for {{name}}</h1>
+
+<div *ngFor="let i of orderList">
+
+    <table>
+        <tr>
+            <td>Order Id:</td>
+            <td>{{i.orderId}}</td>
+        </tr>
+        <tr>
+            <td>Cost:</td>
+            <td>{{i.amount}}</td>
+        </tr>
+    </table>
+    <br>
+</div>
+
+<button [routerLink]="['/']">Back</button>
