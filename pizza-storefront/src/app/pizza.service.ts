@@ -21,7 +21,7 @@ export class PizzaService {
         .set('Accept','application/json')
 
         return lastValueFrom(
-        this.http.post<String>('http://localhost:8080/api/order', order,{headers}).pipe()
+        this.http.post<String>('https://csf-pizza-assessment.herokuapp.com/api/order', order,{headers}).pipe()
         )
 }
 
@@ -32,7 +32,7 @@ export class PizzaService {
         .set('Content-Type','application/json')
         .set('Accept','application/json')
     var email1 = email.replace('@','%40');
-    var url = `http://localhost:8080/api/order/${email1}/all`
+    var url = `https://csf-pizza-assessment.herokuapp.com/api/order/${email1}/all`
 
         return lastValueFrom(
         this.http.get<OrderSummary[]>(url,{headers}).pipe()
